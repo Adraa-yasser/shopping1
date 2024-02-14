@@ -158,7 +158,7 @@ def profile(request):
 
 
 
-def product_favorite(request,pro_id):
+def product_favorite(request, pro_id):
     if request.user.is_authenticated and not request.user.is_authenticated:
         pro_fav=product2.objects.get(pk=pro_id)
         if UserProfile1.objects.filter(user=request.user,product_favorite=pro_fav).exists():
