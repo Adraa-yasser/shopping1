@@ -40,14 +40,16 @@ data-backdrop="static" data-keyboard="false"
       <div class="modal-header">
         <h1 class="modal-title " id="staticBackdropLabel">select Quantity</h1>
         <button type="button" class="close" 
-        data-dismiss="alert" aria-label="Close">
+        data-dismiss="modal" aria-label="Close">
       </div>
       
     </button>
     <div class="modal-body">
       <label for="inputQty">Quantity: </label>
-      <input type="text" class="form-control" name=""
+      <input type="text" class="form-control" name="qty"
        id="inputQty" value="1" placeholder="" required>
+       <input type="hidden" name="pro_id" value="{{pro.id}}">
+       <input type="hidden" name="price" value="{{pro.price}}">
     </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary"
