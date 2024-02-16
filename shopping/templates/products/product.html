@@ -5,7 +5,7 @@
 
   
    <div class="my-form container p-5 my-5 rounded border border-warning">
-    <form>
+    <form id="fromaddtocart" action="{% url 'add_to_cart'%}">
         <h2 class="text-center">Product Details</h2>
         <hr>
         {% include 'partiels/_alerts.html'%}
@@ -53,8 +53,8 @@ data-backdrop="static" data-keyboard="false"
     </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary"
-         data-dismiss="modal">Close</button>
-        <button  class="btn btn-warning">Confirm</button>
+         data-dismiss="modal" id="btnclose">Close</button>
+        <button  onclick="addtocart()" class="btn btn-warning" >Confirm</button>
       </div>
     </div>
   </div>
@@ -95,7 +95,14 @@ data-backdrop="static" data-keyboard="false"
 
 
    
+<script>
+  function addtocart(){
+     document.getElementById('btnclose').click();
+     document.getElementById('fromaddtocart').submit();
 
+
+  }
+</script>
    </div>
   
 {% endblock %}
