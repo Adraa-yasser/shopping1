@@ -36,7 +36,7 @@ def products(request):
 
 
 
-def product(request,pro_id):
+def product(request, pro_id):
 
     context ={
         'pro':get_object_or_404(product2,pk=pro_id)

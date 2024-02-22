@@ -158,14 +158,14 @@ def profile(request):
 
 
 
-def product_favorite(request, pro_id):
+def product_favorite(request, pro_id) :
     if request.user.is_authenticated and not request.user.is_authenticated:
         pro_fav=product2.objects.get(pk=pro_id)
-        if UserProfile1.objects.filter(user=request.user,product_favorite=pro_fav).exists():
+        if UserProfile1.objects.filter(user=request.user,product_favorites=pro_fav).exists():
             messages.success(request,'already product in the favorite list')
                
         else:
-            userprofil=UserProfile1.objects.get(user =request.user)
+            userprofil=UserProfile1.objects.get(user=request.user)
             userprofil.product_favorites.add(pro_fav)
     else:
         messages.error(request,'youe must signin')   
